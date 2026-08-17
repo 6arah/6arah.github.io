@@ -1,0 +1,99 @@
+## `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6arah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <p class="quote">
+            do you think people change, or do they simply reveal different parts of themselves?
+        </p>
+
+        <div class="links">
+            <a href="https://discord.com/users/1054231115528933467" target="_blank">
+                discord
+            </a>
+
+            <a href="https://vzrah.github.io" target="_blank">
+                main site
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
+```
+
+## `style.css`
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #050505;
+    color: #f5f5f5;
+
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    width: min(90%, 700px);
+    text-align: center;
+}
+
+.quote {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #d6d6d6;
+    letter-spacing: -0.01em;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.links a {
+    padding: 7px 13px;
+    border: 1px solid #1d1d1d;
+    border-radius: 8px;
+
+    color: #888;
+    background: #090909;
+
+    font-size: 12px;
+    text-decoration: none;
+
+    transition: 
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.links a:hover {
+    color: #fff;
+    border-color: #333;
+    background: #0d0d0d;
+}
+```
