@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,72 +17,116 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
             background: #050505;
-            color: #f2f2f2;
-
+            color: #f5f5f5;
             font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
         }
 
-        .container {
+        body::before {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: rgba(255, 255, 255, 0.025);
+            filter: blur(100px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        main {
             width: 90%;
             max-width: 650px;
             text-align: center;
+            position: relative;
         }
 
         .quote {
             font-size: 15px;
             line-height: 1.7;
             color: #d0d0d0;
-            font-weight: 400;
+            letter-spacing: -0.01em;
         }
 
         .links {
-            margin-top: 22px;
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 9px;
+            margin-top: 24px;
         }
 
         .links a {
-            padding: 7px 13px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
 
-            color: #888;
-            background: #090909;
+            padding: 8px 13px;
+
             border: 1px solid #1c1c1c;
-            border-radius: 7px;
+            border-radius: 8px;
+
+            color: #858585;
+            background: rgba(10, 10, 10, 0.8);
 
             font-size: 12px;
             text-decoration: none;
 
-            transition: 0.2s ease;
+            transition:
+                color 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
         }
 
         .links a:hover {
-            color: #fff;
-            background: #0d0d0d;
+            color: #f5f5f5;
             border-color: #333;
+            background: #0c0c0c;
+            box-shadow: 0 0 18px rgba(255, 255, 255, 0.045);
+            transform: translateY(-1px);
+        }
+
+        .icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .links a:hover .icon {
+            opacity: 1;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <main>
         <p class="quote">
             do you think people change, or do they simply reveal different parts of themselves?
         </p>
 
         <div class="links">
+
             <a href="https://discord.com/users/1054231115528933467" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.54 5.47A16.9 16.9 0 0 0 15.35 4l-.52 1.06a15.6 15.6 0 0 0-5.66 0L8.65 4a16.9 16.9 0 0 0-4.19 1.47C1.8 9.72 1.08 13.87 1.44 17.96a16.9 16.9 0 0 0 5.16 2.61l1.25-1.7c-.69-.26-1.35-.58-1.97-.96l.48-.37c3.79 1.78 7.9 1.78 11.64 0l.49.37c-.63.38-1.29.7-1.98.96l1.25 1.7a16.9 16.9 0 0 0 5.16-2.61c.42-4.74-.72-8.85-3.38-12.49ZM8.42 15.13c-1.13 0-2.06-1.04-2.06-2.32s.91-2.32 2.06-2.32c1.16 0 2.08 1.04 2.06 2.32 0 1.28-.91 2.32-2.06 2.32Zm7.16 0c-1.13 0-2.06-1.04-2.06-2.32s.91-2.32 2.06-2.32c1.16 0 2.08 1.04 2.06 2.32 0 1.28-.91 2.32-2.06 2.32Z"/>
+                </svg>
                 discord
             </a>
 
             <a href="https://vzrah.github.io" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3 12h18"/>
+                    <path d="M12 3c2.2 2.4 3.4 5.4 3.4 9s-1.2 6.6-3.4 9c-2.2-2.4-3.4-5.4-3.4-9S9.8 5.4 12 3Z"/>
+                </svg>
                 main site
             </a>
+
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
