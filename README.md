@@ -2,5 +2,6 @@
 
 > alternative github
 
-main site: `[vzrah.github.io](vzrah.github.io)`.
-discord: `[@vzrah]([url](https://discord.com/users/1054231115528933467))`
+main site: [`vzrah.github.io`](https://vzrah.github.io)
+
+discord: [`@vzrah`](https://discord.com/users/1054231115528933467)
