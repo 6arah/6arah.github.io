@@ -127,6 +127,18 @@
 
         </div>
     </main>
+<audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+    const music = document.getElementById("bgMusic");
+
+    music.volume = 0.35;
+
+    document.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+</script>
 </body>
 </html>
