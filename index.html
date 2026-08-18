@@ -11,34 +11,31 @@
     const favicon = document.getElementById("favicon");
 
     const normalFrames = ["1.png", "2.png", "3.png", "4.png"];
-    const fastFrames = ["5.png", "6.png", "7.png", "8.png"];
+    const fastFrames = ["5.png", "6.png", "7.png", "8.png", "7.png", "6.png", "5.png"];
 
-    let frame = 0;
-
-    function setFavicon(src) {
-        favicon.href = src;
+    function wait(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     async function animateFavicon() {
-        // Normal frames: 0.8 seconds each
-        for (const image of normalFrames) {
-            setFavicon(image);
-            await new Promise(resolve => setTimeout(resolve, 800));
-        }
+        while (true) {
 
-        // Fast section: repeat twice
-        for (let repeat = 0; repeat < 2; repeat++) {
+            // 1 → 2 → 3 → 4
+            for (const image of normalFrames) {
+                favicon.href = image;
+                await wait(800);
+            }
+
+            // 5 → 6 → 7 → 8 → 7 → 6 → 5
             for (const image of fastFrames) {
-                setFavicon(image);
-                await new Promise(resolve => setTimeout(resolve, 250));
+                favicon.href = image;
+                await wait(250);
             }
         }
-
-        // Start over
-        animateFavicon();
     }
 
     animateFavicon();
+</script>
 </script>
     
     <style>
