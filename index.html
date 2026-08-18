@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6arah</title>
+    <title>@6arah</title>
 
     <style>
         * {
@@ -194,6 +194,42 @@
             enter.classList.add("hidden");
         });
     </script>
+
+    <link id="favicon" rel="icon" type="image/png" href="1.png">
+
+<script>
+    const favicon = document.getElementById("favicon");
+
+    const normalFrames = ["1.png", "2.png", "3.png", "4.png"];
+    const fastFrames = ["5.png", "6.png", "7.png", "8.png"];
+
+    let frame = 0;
+
+    function setFavicon(src) {
+        favicon.href = src;
+    }
+
+    async function animateFavicon() {
+        // Normal frames: 0.8 seconds each
+        for (const image of normalFrames) {
+            setFavicon(image);
+            await new Promise(resolve => setTimeout(resolve, 800));
+        }
+
+        // Fast section: repeat twice
+        for (let repeat = 0; repeat < 2; repeat++) {
+            for (const image of fastFrames) {
+                setFavicon(image);
+                await new Promise(resolve => setTimeout(resolve, 250));
+            }
+        }
+
+    
+        animateFavicon();
+    }
+
+    animateFavicon();
+</script>
 
 </body>
 </html>
